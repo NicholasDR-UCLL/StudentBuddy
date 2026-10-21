@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+:root{
+  --primary: #f0f;
+  --secondary: #0ff;
+  --tertiary: #ff0;
+}
+
+body{
+  background-color: var(--primary);
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+header{
+  background-color: var(--tertiary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header *{
+  display: block;
+}
+header > h2{
+  margin: 0;
+  margin-left: .5em;
+  font-weight: 800;
+}
+nav ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+nav ul li{
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+nav ul li a{
+  padding: 1em;
+}
+nav ul li a:hover{
+  background-color: #00000050;
+}
+
+main{
+  margin: 1em;
+}
+main h1{
+  margin: .5em 0;
+}
+
+.tasks{
+  border: 2px solid var(--secondary);
+  border-radius: 2em;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em;
+  gap: .5em;
+}
+.tasks li{
+  flex: 1;
+  min-width: 200px;
+}
+.tasks article{
+  border: 2px solid var(--secondary);
+  border-radius: 1em;
+  padding: 1em;
+  background-color: #fff;
+}
+.tasks article h3{
+  margin-top: 0;
+  line-height: 1;
+}
+
+.urgent{
+  background-color: #f00 !important;
+}
+
+.ahead{
+  background-color: #0f0 !important;
+}
+
+.loadingbar{
+  border: solid #000;
+  background-color: #f0f;
+  border-radius: 2em;
+}
+.progress{
+  height: 1em;
+  background-color: var(--tertiary);
+  border-radius: 2em;
+  text-align: center;
+}
+.progress p{
+  margin: 0;
+  line-height: 1;
+  min-width: 2em;
+}
