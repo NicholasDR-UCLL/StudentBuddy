@@ -1,13 +1,42 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index_stylesheet.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/index_stylesheet.css" />
     <script src="/js/index_script.js" defer></script>
     <title>Student Buddy</title>
-</head>
-<body>
-    <p>test</p>
-</body>
+  </head>
+  <body>
+    <div>
+      <h2>Todo List</h2>
+      <ul class="tasks" id="todoItems"></ul>
+    </div>
+
+    <div>
+      <h2>Voltooide Taken</h2>
+      <ul class="tasks" id="doneItems"></ul>
+    </div>
+
+    <form id="addTodoForm">
+      <label for="newTodo">Nieuwe todo:</label>
+      <input
+        required
+        type="text"
+        id="newTodo"
+        placeholder="Voeg een nieuwe todo toe"
+      />
+      <label for="newTodoSubject">Vak:</label>
+      <input
+        type="text"
+        id="newTodoSubject"
+        placeholder="Mobile Apps (optioneel)"
+      />
+      <label for="newTodoLink">Link naar de taak (optioneel):</label>
+      <input type="text" id="newTodoLink" placeholder="link (optioneel)" />
+      <label for="newTodoDeadline">Deadline (optioneel):</label>
+      <input type="datetime-local" id="newTodoDeadline" />
+      <button type="submit" id="addTodo">Toevoegen</button>
+    </form>
+  </body>
 </html>
