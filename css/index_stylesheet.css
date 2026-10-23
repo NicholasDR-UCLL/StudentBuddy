@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 :root{
-  --primary: #f0f;
-  --secondary: #0ff;
-  --tertiary: #ff0;
+  --primary: oklab(72.35% -0.11102 -0.05501);
+  --secondary: oklab(60.8% -0.05202 -0.12039);
+  --tertiary: oklab(57.665% 0.02725 -0.23303);
+  --warn: oklab(62.3% 0.15495 0.06684);
+  --ahead: oklab(78.6% -0.13427 0.09822);
 }
 
 body{
-  background-color: var(--primary);
   margin: 0;
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
@@ -16,14 +17,17 @@ body{
 }
 
 header{
-  background-color: var(--tertiary);
+  background-color: var(--primary);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: #000;
 }
 header *{
   display: block;
+  text-decoration: none;
+  color: #000;
 }
 header > h2{
   margin: 0;
@@ -47,7 +51,8 @@ nav ul li a{
   padding: 1em;
 }
 nav ul li a:hover{
-  background-color: #00000050;
+  color: #fff;
+  background-color: #00000010;
 }
 
 main{
@@ -59,13 +64,13 @@ main h1{
 
 .tasks{
   border: 2px solid var(--secondary);
-  border-radius: 2em;
+  border-radius: 20px;
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 1em;
+  padding: 10px;
   gap: .5em;
 }
 .tasks li{
@@ -73,10 +78,10 @@ main h1{
   min-width: 200px;
 }
 .tasks article{
-  border: 2px solid var(--secondary);
-  border-radius: 1em;
+  border-radius: 10px;
   padding: 1em;
-  background-color: #fff;
+  background-color: #eee;
+  box-shadow: 5px 5px 5px #00000050;
 }
 .tasks article h3{
   margin-top: 0;
@@ -84,26 +89,62 @@ main h1{
 }
 
 .urgent{
-  background-color: #f00 !important;
+  background-color: var(--warn) !important;
 }
 
 .ahead{
-  background-color: #0f0 !important;
+  background-color: var(--ahead) !important;
 }
 
 .loadingbar{
-  border: solid #000;
-  background-color: #f0f;
-  border-radius: 2em;
+  background-color: var(--secondary);
+  border-radius: 1em;
+  overflow: hidden;
 }
 .progress{
-  height: 1em;
-  background-color: var(--tertiary);
-  border-radius: 2em;
+  height: 1.25em;
+  background-color: var(--primary);
   text-align: center;
 }
 .progress p{
   margin: 0;
-  line-height: 1;
+  line-height: 1.25;
   min-width: 2em;
+}
+
+#addTodoForm{
+  border-radius: 10px;
+  padding: 1em;
+  background-color: #eee;
+  box-shadow: 5px 5px 5px #00000050;
+}
+form p{
+  display: flex;
+  justify-content: space-between;
+}
+form button[type="submit"], form input{
+  border: var(--secondary) solid 2px;
+  border-radius: 1em;
+  padding: 2px 5px;
+  font-weight: 600;
+  transition: box-shadow .5s;
+  background-color: #fff;
+}
+form input:focus-visible{
+  outline: none;
+  box-shadow: 3px 3px 5px #00000050;
+}
+form label{
+  font-size: 1em;
+}
+form input:disabled{
+  cursor:not-allowed;
+}
+
+form button, form input{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
