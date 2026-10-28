@@ -197,23 +197,36 @@ button, input{
   display: none;
 }
 
+body:has(.grid){
+  background-color: #ddd;
+}
+
 body:has(.grid) h1{
   text-align: center;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    margin: 0 9em 4em;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin: 0 9em 4em;
 }
 
 .grid-text {
+  box-sizing: border-box;
   box-shadow: 0 4px 8px rgba(5, 5, 5, 5);
   padding: 0 1.5em;
 }
+.grid-text > *{
+  /* margin: 0 24px; */
+}
+
+.grid-item, .grid-text{
+  width: calc(50% - 1em)
+}
 
 img {
-    max-width: 100%;
-    border-radius: 1em;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 1em;
 }
