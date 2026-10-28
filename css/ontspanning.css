@@ -13,7 +13,7 @@ body {
     gap: 1em;
 }
 
-.grid-item {
+.grid-text {
     box-shadow: 0 4px 8px rgba(5, 5, 5, 5);
 }
 
