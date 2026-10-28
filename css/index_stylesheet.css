@@ -142,6 +142,7 @@ main h1 {
 }
 
 .progress {
+  transition: all 1s;
   height: 1.25em;
   background-color: var(--primary);
   text-align: center;
