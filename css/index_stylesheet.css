@@ -6,6 +6,7 @@
   --tertiary: oklab(57.665% 0.02725 -0.23303);
   --warn: oklab(62.3% 0.15495 0.06684);
   --ahead: oklab(78.6% -0.13427 0.09822);
+  --death: oklab(0% 0 0);
 }
 
 body {
@@ -85,6 +86,7 @@ main h1 {
 .tasks li {
   flex: 1;
   min-width: 200px;
+  max-width: 500px;
   border-radius: 10px;
   padding: 1em;
   background-color: #eee;
@@ -94,10 +96,35 @@ main h1 {
 }
 .tasks li:hover{
   scale: 1.1;
+  box-shadow: 0 2px 10px;
+}
+.tasks li a{
+  color: var(--secondary);
+  font-weight: 600;
+  transition: all .1s;
+  box-shadow: 0 0 0 inherit;
+}
+.tasks li a:hover{
+  text-shadow: 0 0 5px;
 }
 .tasks li h3{
   margin-top: 0;
   line-height: 1;
+}
+
+.overdue{
+  color: #fff;
+  background-color: var(--death) !important;
+  box-shadow: 0 0 5px var(--warn), 0 0 10px var(--warn), 0 0 15px var(--warn) , 0 0 20px var(--warn) , 0 0 25px var(--warn)  !important;
+}
+.overdue a{
+  color: red !important;
+}
+.overdue .loadingbar{
+  background-color: #666;
+}
+.overdue .progress{
+  background-color: #444;
 }
 
 .urgent {
@@ -168,4 +195,25 @@ button, input{
 
 .hidden{
   display: none;
+}
+
+body:has(.grid) h1{
+  text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin: 0 9em 4em;
+}
+
+.grid-text {
+  box-shadow: 0 4px 8px rgba(5, 5, 5, 5);
+  padding: 0 1.5em;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 1em;
 }
