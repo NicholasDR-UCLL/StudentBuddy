@@ -1,6 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --primary: oklab(72.35% -0.11102 -0.05501);
+  --secondary: oklab(60.8% -0.05202 -0.12039);
+  --tertiary: oklab(57.665% 0.02725 -0.23303);
+  --warn: oklab(62.3% 0.15495 0.06684);
+  --ahead: oklab(78.6% -0.13427 0.09822);
+}
+
 body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+header {
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+}
+
+header * {
+  display: block;
+  text-decoration: none;
+  color: #000;
+}
+
+header>h2 {
+  margin: 0;
+  margin-left: .5em;
+  font-weight: 800;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+nav ul li a {
+  padding: 1em;
+}
+
+nav ul li a:hover {
+  color: #fff;
+  background-color: #00000010;
+}
+
+main {
+  margin: 1em;
+}
+
+main h1 {
+  margin: .5em 0;
+}
+
+.tasks {
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  gap: .5em;
+}
+
+.tasks li {
+  flex: 1;
+  min-width: 200px;
+}
+
+.tasks article {
+  border-radius: 10px;
+  padding: 1em;
+  background-color: #eee;
+  box-shadow: 5px 5px 5px #00000050;
+}
+
+.tasks article h3 {
+  margin-top: 0;
+  line-height: 1;
+}
+
+.urgent {
+  background-color: var(--warn) !important;
+}
+
+.ahead {
+  background-color: var(--ahead) !important;
+}
+
+.loadingbar {
+  background-color: var(--secondary);
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.progress {
+  height: 1.25em;
+  background-color: var(--primary);
+  text-align: center;
+}
+
+.progress p {
+  margin: 0;
+  line-height: 1.25;
+  min-width: 2em;
+}
+
+#addTodoForm {
+  border-radius: 10px;
+  padding: 1em;
+  background-color: #eee;
+  box-shadow: 5px 5px 5px #00000050;
+}
+
+form p {
+  display: flex;
+  justify-content: space-between;
+}
+
+form button[type="submit"],
+form input {
+  border: var(--secondary) solid 2px;
+  border-radius: 1em;
+  padding: 2px 5px;
+  font-weight: 600;
+  transition: box-shadow .5s;
+  background-color: #fff;
+}
+
+form input:focus-visible {
+  outline: none;
+  box-shadow: 3px 3px 5px #00000050;
+}
+
+form label {
+  font-size: 1em;
+}
+
+form input:disabled {
+  cursor: not-allowed;
+}
+
+form button,
+form input {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
